@@ -1,0 +1,18 @@
+footer {
+    text-align: center;
+    padding: 150px 0;
+    color: #D1C9C1;
+    background: url(../images/bg1.png)
+}
+
+.logo--light path {
+    fill: #D1C9C1;
+}
+
+footer .logo {
+    margin: 20px auto;
+    @extend %is-not-showingX;
+    &.is-showing {
+        @extend %is-showingX
+    }
+}

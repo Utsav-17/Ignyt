@@ -1,0 +1,135 @@
+.section--mission,
+.section--taproom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 10px 0;
+    overflow: hidden;
+}
+
+.section--taproom {
+    flex-direction: row-reverse
+}
+
+#taproom img ,
+#mission .card {
+    transform: translate(-150vh, 0)
+}
+
+.front,
+.back {
+    box-shadow: 0 0 15px #00000080;
+}
+
+.card {
+    width: 500px;
+    padding: 1.5rem 3rem 1.5rem 1.5rem;
+    position: relative;
+
+    &:after {
+        content: '';
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        right: 10px;
+        bottom: 10px;
+        z-index: 0;
+    }
+    p {
+        margin-bottom: 20px;
+    }
+}
+.card--dark {
+    background: #424D51;
+    &::after {
+        border: 3px dashed #718085;
+    }
+    .section__title{
+        color: #fff;
+    }
+    p {
+        color: #A3B9BF;
+    }
+}
+.card--light {
+    background: #fff;
+    &::after {
+        border: 3px dashed #414A4D;
+    }
+    p {
+        color: #414A4D;
+    }
+}  
+
+.btn {
+    padding: 6px 20px;
+    font-family: $bold;
+    border-radius: 7px;
+    margin-right: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+    transition: all 100ms ease;
+    top: 0;
+    left: 0;
+
+    &.btn--light {
+        background: #D5C8C0;
+        color: #414A4D;
+    }
+    &.btn--dark {
+        background: #414A4D;
+        color: #D5C8C0;
+    }
+    &.btn--outline {
+        color: #414A4D;
+        background: transparent;
+        border: 2px solid #414A4D;
+    }
+    &:hover {
+        left: -3px;
+        top: -3px;
+        box-shadow: 2px 5px 2px #0004
+    }
+}
+
+.front {
+    position: relative;
+    margin-left: -50px;
+    margin-top: 140px;
+    z-index: 10;
+}
+
+@media (max-width: 870px) {
+    .section--mission,
+    .section--taproom {
+        flex-direction: column;
+        align-items: flex-start
+    }
+    .section--taproom {
+        flex-direction: column-reverse;
+    }
+    .card {
+        padding: 1.3rem;
+    }
+    .back {
+        margin: 0;
+        width: 95%;
+    }
+    .front {
+        margin-top: -40px;
+        width: 95%;
+        align-self: flex-end;
+    }
+    img {
+        &.front,
+        &.back {
+            object-fit: cover;
+            height: 250px;
+            z-index: -1;
+            width: 80%;
+        }
+    }
+}
